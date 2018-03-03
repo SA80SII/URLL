@@ -248,6 +248,7 @@ public class URLinkedList<E> implements URList<E>{
 		URNode<E> curr = head;
 		return curr.element();
 		//commit
+		//commit2
 		}
 	// Retrieves, but does not remove, the last element of this list, or returns null if this list is empty.
 	public E peekLast() {
