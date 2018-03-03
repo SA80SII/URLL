@@ -247,11 +247,6 @@ public class URLinkedList<E> implements URList<E>{
 		}
 		URNode<E> curr = head;
 		return curr.element();
-<<<<<<< HEAD:URLinkedList.java
-		//commit
-		//commit2
-=======
->>>>>>> Oleg's-Branch:src/URLinkedList.java
 
 		}
 	// Retrieves, but does not remove, the last element of this list, or returns null if this list is empty.
