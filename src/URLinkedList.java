@@ -247,24 +247,42 @@ public class URLinkedList<E> implements URList<E>{
 		}
 		URNode<E> curr = head;
 		return curr.element();
-		//commit
-		//commit2
+
 		}
 	// Retrieves, but does not remove, the last element of this list, or returns null if this list is empty.
 	public E peekLast() {
-		return null;
-		
+		if(tail== null) {
+			throw new NoSuchElementException();
+		}
+		URNode<E> curr = tail;
+		return curr.element();	
 	}
 	// Retrieves and removes the first element of this list, or returns null if this list is empty.
 	public E pollFirst() {
-		return null;
-		
+		if(head== null) {
+			throw new NoSuchElementException();
+		}
+		URNode<E> curr = head;
+		return curr.element();
+		if (tail!=curr){
+			head=curr.next
+		}
+		curr= URNode<E> (null,null,null);
 	}
 	// Retrieves and removes the last element of this list, or returns null if this list is empty.
 	public E pollLast() {
-		return null;
+		if(tail==null) {
+			throw new NoSuchElementException();
+		}
+		URNode<E> curr = tail;
+		return curr.element();
+		if (head!=curr){
+			tail=curr.prev();
+		}
+		curr= URNode<E> (null,null,null);
+
 		
 	}
-//heywes
+
 }
 
