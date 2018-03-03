@@ -2,6 +2,8 @@ import java.util.Collection;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+
+import URList.URNode;
 public class URLinkedList<E> implements URList<E>{
 	 transient URNode<E> head;
 	 transient URNode<E> tail;
@@ -246,6 +248,10 @@ public class URLinkedList<E> implements URList<E>{
 		URNode<E> curr = head;
 		return curr.element();
 		//commit
+<<<<<<< HEAD
+=======
+		//commit2
+>>>>>>> Oleg's-Branch
 		}
 	// Retrieves, but does not remove, the last element of this list, or returns null if this list is empty.
 	public E peekLast() {

@@ -30,7 +30,7 @@ public class TestClass {
 		System.out.println(Arrays.toString(list.toArray()));
 		list.remove(0);
 		System.out.println(Arrays.toString(list.toArray()));
-
+		System.out.println(list.peekFirst());
 
 			}
 
