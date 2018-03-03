@@ -2,6 +2,8 @@ import java.util.Collection;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+
+import URList.URNode;
 public class URLinkedList<E> implements URList<E>{
 	 transient URNode<E> head;
 	 transient URNode<E> tail;
@@ -240,9 +242,12 @@ public class URLinkedList<E> implements URList<E>{
 	
 	// Retrieves, but does not remove, the first element of this list, or returns null if this list is empty.
 	public  E  peekFirst() {
-		return null;
-		
-	}
+		if(head== null) {
+			throw new NoSuchElementException();
+		}
+		URNode<E> curr = head;
+		return curr.element();
+		}
 	// Retrieves, but does not remove, the last element of this list, or returns null if this list is empty.
 	public E peekLast() {
 		return null;
