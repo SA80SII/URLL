@@ -86,7 +86,12 @@ public class URLinkedList<E> implements URList<E>{
 
 	@Override
 	public boolean contains(Object o) {
-		// TODO Auto-generated method stub
+		int counter=0;
+		URNode<E> one = head;
+		while (one!=tail){
+			
+			one=one.next();
+		}
 		return false;
 	}
 
@@ -159,14 +164,28 @@ public class URLinkedList<E> implements URList<E>{
 	@Override
 	public E remove(int index) {
 		URNode<E> curr = head;
+		URNode<E> place;
 		int i = 0;
-		while(i != index-1) {
+		while(i < index-1) {
 			curr = curr.next();
 			i++;
 		}
-		
-		// need an if statement
-		curr.setNext(curr.next().next());	
+		if (i==0){
+			if (head!=tail){
+				curr=new URNode<E> (null,null,null);
+			}
+			else{
+			place=curr.next();
+			place.setPrev(null);
+			head=place;
+			}
+		}
+		else{
+			place=curr.next();
+			place.setPrev(curr.prev());
+			curr.prev().setNext(place);
+			
+		}
 		size--;
 		return curr.element();
 	}
@@ -265,9 +284,10 @@ public class URLinkedList<E> implements URList<E>{
 		URNode<E> curr = head;
 		return curr.element();
 		if (tail!=curr){
-			head=curr.next
+			head=curr.next();
 		}
-		curr= URNode<E> (null,null,null);
+		curr= new URNode<E> (null,null,null);
+		size--;
 	}
 	// Retrieves and removes the last element of this list, or returns null if this list is empty.
 	public E pollLast() {
@@ -279,8 +299,8 @@ public class URLinkedList<E> implements URList<E>{
 		if (head!=curr){
 			tail=curr.prev();
 		}
-		curr= URNode<E> (null,null,null);
-
+		curr= new URNode<E> (null,null,null);
+		size--;
 		
 	}
 
